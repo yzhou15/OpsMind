@@ -1,0 +1,61 @@
+# .dockerignore - Docker 构建时忽略的文件
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+.env
+
+# 测试文件
+tests/
+*.test.py
+.pytest_cache/
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# 数据文件（通过 volume 挂载）
+data/
+chroma_db/
+
+# 模型缓存
+.cache/
+.huggingface/
+
+# 临时文件
+*.tmp
+*.log
+*.bak
+
+# 文档
+*.md
+!README.md
+
+# Docker 相关文件（避免递归）
+docker/
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# 其他
+*.db
+*.sqlite
+.coverage
+htmlcov/
