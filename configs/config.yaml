@@ -1,0 +1,42 @@
+# OpsMind 智能运维助手配置文件
+
+# 数据处理配置
+data:
+  raw_dir: "./data/raw"           # 原始数据目录
+  processed_dir: "./data/processed"  # 清洗后数据目录
+  supported_formats:
+    - .json
+    - .xml
+    - .log
+    - .txt
+    - .md
+    - .pdf
+
+# 文档切分配置
+chunk:
+  chunk_size: 1000        # 每个片段的最大字符数
+  chunk_overlap: 200     # 相邻片段的重叠字符数
+  max_context_length: 3000  # Prompt 最大上下文长度
+
+# 向量存储配置
+vector_store:
+  persist_dir: "./chroma_db"   # 向量库持久化目录
+  embedding_model: "BAAI/bge-m3"  # Embedding 模型
+  model_device: "cpu"      # 模型运行设备
+
+# LLM 配置
+llm:
+  provider: "ollama"       # ollama 或 vllm
+  model_name: "qwen2.5:7b"  # 默认模型
+  temperature: 0.3        # 温度参数
+  max_tokens: 2048        # 最大生成token数
+
+# API 配置（可选）
+api:
+  host: "127.0.0.1"       # 服务监听地址
+  port: 8000              # 服务端口
+
+# 日志配置
+logging:
+  level: "INFO"           # 日志级别
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
